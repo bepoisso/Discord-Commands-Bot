@@ -32,10 +32,22 @@ This is a Discord bot for managing Customs commands for GtaV RP server.
 
      [Service]
      Type=simple
-     User=chronos
+     User=bot
+     Group=bot
+
      WorkingDirectory=/opt/bot/bot_command
-     ExecStart=/usr/bin/python3 /opt/bot/bot_command/main.py
+     ExecStart=/usr/bin/python3 main.py
+
+     EnvironmentFile=/opt/bot/bot_command/.env
+
      Restart=always
+     RestartSec=5
+
+     StandardOutput=journal
+     StandardError=journal
+
+     NoNewPrivileges=true
+     PrivateTmp=true
 
      [Install]
      WantedBy=multi-user.target

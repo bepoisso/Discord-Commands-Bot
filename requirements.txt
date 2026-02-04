@@ -1,2 +1,11 @@
+/*
+ * Filename: /opt/bot/bot_command/requirements.txt
+ * Path: /opt/bot/bot_command
+ * Created Date: Tuesday, February 3rd 2026, 6:54:35 pm
+ * Author: bpoisson | https://github.com/bepoisso
+ * 
+ * Copyright (c) 2026 Project Chronos
+ */
+
 discord.py
 python.dotenv

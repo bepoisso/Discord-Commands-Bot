@@ -1,3 +1,11 @@
+'''
+Filename: /opt/bot/bot_command/main.py
+Path: /opt/bot/bot_command
+Created Date: Wednesday, February 4th 2026, 5:10:35 am
+Author: bpoisson | https://github.com/bepoisso
+
+Copyright (c) 2026 Project Chronos
+'''
 
 import discord
 from dotenv import load_dotenv

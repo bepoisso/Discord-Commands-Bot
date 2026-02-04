@@ -1,3 +1,12 @@
+'''
+Filename: /opt/bot/bot_command/commands/wl.py
+Path: /opt/bot/bot_command/commands
+Created Date: Wednesday, February 4th 2026, 5:12:01 am
+Author: bpoisson | https://github.com/bepoisso
+
+Copyright (c) 2026 Project Chronos
+'''
+
 """
 Command: wl
 
