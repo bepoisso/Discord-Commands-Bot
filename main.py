@@ -41,6 +41,7 @@ async def on_ready():
 # IMPORT DES COMMANDES (OBLIGATOIRE AVANT RUN)
 import commands.douane
 import commands.wl
+import commands.warn
 
 bot.run(TOKEN, log_handler=handler, log_level=logging.DEBUG)
 

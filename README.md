@@ -1,6 +1,18 @@
 # Discord-Commands-Bot
+## Available Commands
 
-This is a Discord bot for managing Customs commands for GtaV RP server.
+| Command                 | Arguments              | Description                                 |
+|-------------------------|------------------------|---------------------------------------------|
+| `/whitelist`            | `member`               | Adds a member to the whitelist              |
+| `/douane_fail`          | `member`               | Handles customs failures                    |
+| `/warn`                 | `member`               | Warns a member for rule violations          |
+| `/revive`               | `id`                   | Revives a player (TODO)                     |
+| `/fouriere`             | `id`                   | Sends a player to the impound (TODO)        |
+| `/help_staff`           | None                   | Shows help for staff (TODO)                 |
+
+**Note:** Replace `id` with the relevant player's identifier.
+
+This is a Discord bot for managing Customs commands for a GtaV RP server.
 
 ## Features
 - Slash commands for whitelisting and customs (douane)
@@ -73,9 +85,7 @@ Note: In each file inside the `commands` folder, you can modify the roles and ch
 ## TODO
    - /revive [id]
    - /fouriere [id]
-   - /warn [membre]
    - /help_staff
-
 
 ## Author
 bpoisson [text](https://github.com/bepoisso)
