@@ -106,11 +106,11 @@ async def douane_fail(
 		timestamp=now
 	)
 
-	embed.add_field(name="Nom du douanier", value=interaction.user.mention)
-	embed.add_field(name="Numéro de formulaire", value=str(formulaire))
+	embed.add_field(name="Nom du douanier", value=interaction.user.mention, inline=False)
+	embed.add_field(name="Numéro de formulaire", value=str(formulaire), inline=False)
 
 	if count in (1, 2):
-		embed.add_field(name="Date de repassage", value=repassage_date)
+		embed.add_field(name="Date de repassage", value=repassage_date, inline=False)
 
 	embed.set_footer(text="Chronos Bot")
 

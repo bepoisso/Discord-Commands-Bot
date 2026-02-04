@@ -76,7 +76,7 @@ async def wl(
 
 	embed.add_field(
 		name="Nom du douanier",
-		value=interaction.user.mention
+		value=interaction.user.mention, inline=False
 	)
 
 	await channel.send(embed=embed)
