@@ -16,7 +16,7 @@ from bot_instance import bot
 load_dotenv()
 
 TOKEN = os.getenv("BOT_TOKEN")
-LOG_CHANNEL_ID   = os.getenv("LOG_CHANNEL")	# Salon texte (logs)
+LOG_CHANNEL_ID   = int(os.getenv("LOG_CHANNEL"))	# Salon texte (logs)
 
 
 handler = logging.FileHandler(
@@ -35,9 +35,6 @@ async def on_ready():
 	print(f"✅ Bot connecté : {bot.user.name}")
 	await log(f"✅ Bot connecté : {bot.user.name}")
 
-	# ⚠️ À garder UNE SEULE FOIS si besoin de nettoyer Discord
-	bot.tree.clear_commands(guild=None)
-
 	try:
 		synced = await bot.tree.sync()
 		print(f"🔁 {len(synced)} slash commands synchronisées")
@@ -50,6 +47,9 @@ async def on_ready():
 import commands.douane
 import commands.wl
 import commands.warn
+# import commands.revive
+# import commands.fouriere
+# import commands.help_staff
 
 bot.run(TOKEN, log_handler=handler, log_level=logging.DEBUG)
 

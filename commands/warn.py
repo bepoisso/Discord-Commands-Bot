@@ -30,12 +30,13 @@ Note:
 import discord
 from discord import app_commands
 from datetime import datetime, timedelta
+import os
 from bot_instance import bot
 
 tree = bot.tree
 
-staff = 1462145081803800666 #Staff Role
-warn_c = 1468680649459372063 # Warn Channel
+staff = int(os.getenv("STAFF_ROLE")) #Staff Role
+warn_c = int(os.getenv("WARN_CHANNEL")) # Warn Channel
 
 @tree.command(name="warn", description="Sanctioner un joueur d'un warn")
 @app_commands.describe(

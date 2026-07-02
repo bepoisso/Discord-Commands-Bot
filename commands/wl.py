@@ -19,17 +19,18 @@ Only staff with the required role can use this command.
 import discord
 from discord import app_commands
 from datetime import datetime
+import os
 from bot_instance import bot
 
 tree = bot.tree
 
-staff = 1462145081803800666 # Staff Role
-customs = 1468304263292915836 #Channel to store message
-congrat = 1495888404972572712 # Channel for congrat message
-ff_r = 1468429857292550320 # First fail role
-sf_r = 1468448474625343529 # Second fail role
-citizen = 1460784739408674867 # Citizen Role
-notCitizen = 1460784791933816952 # Not Citizen Role
+staff = int(os.getenv("STAFF_ROLE")) # Staff Role
+customs = int(os.getenv("CUSTOMS_CHANNEL")) #Channel to store message
+congrat = int(os.getenv("CONGRAT_CHANNEL")) # Channel for congrat message
+ff_r = int(os.getenv("FIRST_FAIL_ROLE")) # First fail role
+sf_r = int(os.getenv("SECOND_FAIL_ROLE")) # Second fail role
+citizen = int(os.getenv("CITIZEN_ROLE")) # Citizen Role
+notCitizen = int(os.getenv("NOT_CITIZEN_ROLE")) # Not Citizen Role
 
 @tree.command(name="wl", description="Whitliste une personne")
 @app_commands.describe(

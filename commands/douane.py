@@ -19,15 +19,16 @@ Only staff with the required role can use this command.
 import discord
 from discord import app_commands
 from datetime import datetime, timedelta
+import os
 from bot_instance import bot
 
 tree = bot.tree
 
-staff = 1462145081803800666 #Staff Role
-customs = 1468304263292915836 #Channel to store message
-ff_r = 1468429857292550320 # First fail role
-sf_r = 1468448474625343529 # Second fail role
-df_r = 1468449578792784053 # Definitiv fail role
+staff = int(os.getenv("STAFF_ROLE")) #Staff Role
+customs = int(os.getenv("CUSTOMS_CHANNEL")) #Channel to store message
+ff_r = int(os.getenv("FIRST_FAIL_ROLE")) # First fail role
+sf_r = int(os.getenv("SECOND_FAIL_ROLE")) # Second fail role
+df_r = int(os.getenv("DEFINITIVE_FAIL_ROLE")) # Definitiv fail role
 
 @tree.command(name="douane_fail", description="Une personne a echouee la douane")
 @app_commands.describe(
@@ -58,13 +59,6 @@ async def douane_fail(
 	if channel is None:
 		await interaction.response.send_message(
 			"Channel not found. Contact @flitcher_dev",
-			ephemeral=True
-		)
-		return
-
-	if formulaire not in (1, 2, 3):
-		await interaction.response.send_message(
-			"Mauvais numero de formulaire",
 			ephemeral=True
 		)
 		return

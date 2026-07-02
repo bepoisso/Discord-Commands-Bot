@@ -6,11 +6,7 @@
 | `/whitelist`            | `member`               | Adds a member to the whitelist              |
 | `/douane_fail`          | `member`               | Handles customs failures                    |
 | `/warn`                 | `member`               | Warns a member for rule violations          |
-| `/revive`               | `id`                   | Revives a player (TODO)                     |
-| `/fouriere`             | `id`                   | Sends a player to the impound (TODO)        |
-| `/help_staff`           | None                   | Shows help for staff (TODO)                 |
-
-**Note:** Replace `id` with the relevant player's identifier.
+| `/help_staff`           | None                   | Shows the list of staff commands            |
 
 This is a Discord bot for managing Customs commands for a GtaV RP server.
 
@@ -26,10 +22,8 @@ This is a Discord bot for managing Customs commands for a GtaV RP server.
    pip install -r requirements.txt
    ```
 3. **Configure your environment**:
-   - Create a `.env` file with your Discord bot token:
-     ```env
-     BOT_TOKEN=token
-     ```
+   - Create a `.env` file with your Discord bot token and all informations
+   
 4. **Run the bot manually**:
    ```bash
    python3 main.py
@@ -72,7 +66,7 @@ This is a Discord bot for managing Customs commands for a GtaV RP server.
 - `.env`: Environment variables
 - `requirements.txt`: Python dependencies
 
-Note: In each file inside the `commands` folder, you can modify the roles and channels using the variables defined within the file.
+Note: All role and channel IDs are centralized in `.env` (see the CONFIG sections). Edit them there — the command files read them via `os.getenv(...)`.
 
 ## Troubleshooting
 - If you see `Permission denied` for `discord.log`, fix permissions with:
@@ -81,11 +75,6 @@ Note: In each file inside the `commands` folder, you can modify the roles and ch
   sudo chmod u+w /opt/bot/bot_command
   ```
 - Check logs in `discord.log` for errors.
-
-## TODO
-   - /revive [id]
-   - /fouriere [id]
-   - /help_staff
 
 ## Author
 bpoisson [text](https://github.com/bepoisso)
