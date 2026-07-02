@@ -32,13 +32,13 @@ df_r = 1468449578792784053 # Definitiv fail role
 @tree.command(name="douane_fail", description="Une personne a echouee la douane")
 @app_commands.describe(
 	member="Le membre à sanctionner",
-	formulaire="Numéro du formulaire (1, 2 ou 3)"
+	raison="Un commentaire a faire ?"
 )
 @app_commands.checks.has_role(staff)
 async def douane_fail(
 	interaction: discord.Interaction,
 	member: discord.Member,
-	formulaire: int
+	raison: str
 ):
 	guild = interaction.guild
 
@@ -107,7 +107,7 @@ async def douane_fail(
 	)
 
 	embed.add_field(name="Nom du douanier", value=interaction.user.mention, inline=False)
-	embed.add_field(name="Numéro de formulaire", value=str(formulaire), inline=False)
+	embed.add_field(name="Raison", value=raison, inline=False)
 
 	if count in (1, 2):
 		embed.add_field(name="Date de repassage", value=repassage_date, inline=False)

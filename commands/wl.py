@@ -25,7 +25,7 @@ tree = bot.tree
 
 staff = 1462145081803800666 # Staff Role
 customs = 1468304263292915836 #Channel to store message
-congrat = 1460798213463343300 # Channel for congrat message
+congrat = 1495888404972572712 # Channel for congrat message
 ff_r = 1468429857292550320 # First fail role
 sf_r = 1468448474625343529 # Second fail role
 citizen = 1460784739408674867 # Citizen Role
@@ -33,12 +33,14 @@ notCitizen = 1460784791933816952 # Not Citizen Role
 
 @tree.command(name="wl", description="Whitliste une personne")
 @app_commands.describe(
-	member="Le membre à whitelist"
+	member="Le membre à whitelist",
+	commentaire="un commentaire a faire ?"
 )
 @app_commands.checks.has_role(staff)
 async def wl(
 	interaction: discord.Interaction,
-	member: discord.Member
+	member: discord.Member,
+	commentaire: str
 ):
 	guild = interaction.guild
 
@@ -69,7 +71,10 @@ async def wl(
 
 	embed = discord.Embed(
 		title="💚 Whitelist réussie",
-		description=f"{member.mention} a réussi sa whitelist.",
+		description=(
+			f"{member.mention} a réussi sa whitelist.\n\n"
+			f"**Commentaire :** {commentaire}"
+		),
 		color=discord.Color.green(),
 		timestamp=datetime.now()
 	)
